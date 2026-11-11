@@ -149,7 +149,7 @@ def main():
     rows = []
     for d in sorted(glob.glob(os.path.join(a.truth, "*"))):
         ev = os.path.join(a.events, os.path.basename(d))
-        if os.path.isdir(ev) and os.path.exists(os.path.join(d, "truth.csv")):
+        if os.path.isdir(ev) and all(os.path.exists(os.path.join(d, f)) for f in ("truth.csv", "run.env")):
             rows += classify_run(d, ev)
     with open(a.out, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)
