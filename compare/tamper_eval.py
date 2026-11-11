@@ -9,7 +9,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 import clock_anomaly  # noqa: E402
-from diff import load_env, norm_path  # noqa: E402
+from diff import load_env, norm_path, resolve_renames  # noqa: E402
 
 
 def main(out="results/tamper.json"):
@@ -18,10 +18,10 @@ def main(out="results/tamper.json"):
         run = os.path.basename(d)
         env = load_env(os.path.join(d, "run.env"))
         back, first = int(env["CLOCK_SET_BACK_S"]), int(env["TAMPERED_FROM_ACTION"])
-        truth = list(csv.DictReader(open(os.path.join(d, "truth.csv"))))
-        created_after = {norm_path(r["path"]) for r in truth
+        truth = resolve_renames(list(csv.DictReader(open(os.path.join(d, "truth.csv")))))
+        created_after = {norm_path(r["check_path"]) for r in truth
                          if int(r["action_id"]) >= first and r["type"] in ("create", "copy", "zip", "unzip", "mkdir")}
-        created_before = {norm_path(r["path"]) for r in truth
+        created_before = {norm_path(r["check_path"]) for r in truth
                           if int(r["action_id"]) < first and r["type"] in ("create", "copy", "zip", "unzip", "mkdir")}
         body = os.path.join(os.path.dirname(env["IMAGE"]), "raw", "tsk.body")
         flagged = {norm_path(p.split(" (")[0]): f for p, _, _, f in clock_anomaly.flag(clock_anomaly.load(body))}

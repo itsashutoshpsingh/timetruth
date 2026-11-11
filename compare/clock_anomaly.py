@@ -23,6 +23,8 @@ def load(body):
         f = line.rstrip("\n").split("|")
         if len(f) < 11 or "($FILE_NAME)" in f[1] or f[10] in ("", "0"):
             continue
+        if f[1].startswith("/$"):  # NTFS metadata files: ntfs-3g stamps $MFT with 2076-11-29
+            continue
         num = int(re.match(r"\d+", f[2]).group())
         rows.append((num, int(f[10]), f[1]))
     return sorted(rows)
