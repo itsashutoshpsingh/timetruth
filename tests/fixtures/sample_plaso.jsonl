@@ -1,0 +1,3 @@
+{"data_type": "fs:stat", "filename": "\\docs\\report.txt", "is_allocated": true, "parser": "filestat", "timestamp": 1792889881432261, "timestamp_desc": "Content Modification Time"}
+{"data_type": "fs:stat:ntfs", "filename": "\\$MFT", "path_hints": ["\\docs\\report.txt"], "attribute_type": 48, "is_allocated": true, "parser": "mft", "timestamp": 1792889880000000, "timestamp_desc": "Creation Time"}
+{"data_type": "windows:registry:key_value", "filename": "x", "timestamp": 1, "timestamp_desc": "Content Modification Time"}

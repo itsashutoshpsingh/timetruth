@@ -3,5 +3,4 @@ __pycache__/
 *.img
 *.plaso
 logs/
-results/events/
 .pytest_cache/

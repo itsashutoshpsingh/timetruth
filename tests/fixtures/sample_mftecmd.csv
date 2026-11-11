@@ -1,0 +1,2 @@
+EntryNumber,SequenceNumber,InUse,ParentEntryNumber,ParentSequenceNumber,ParentPath,FileName,Created0x10,Created0x30,LastModified0x10,LastModified0x30,LastRecordChange0x10,LastRecordChange0x30,LastAccess0x10,LastAccess0x30
+66,1,True,64,1,.\docs,report.txt,2026-10-25 00:57:01.4322610,2026-10-25 00:57:01.4322610,2026-10-25 00:57:02.6380000,,2026-10-25 00:57:02.6380000,,2026-10-25 00:57:01.4322610,
