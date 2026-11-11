@@ -1,0 +1,25 @@
+tool,path,epoch,kind,attr,deleted,label_ambiguous,raw
+tsk_mactime_z,/file1.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file1.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file2.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file2.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file3.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file3.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file4.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file4.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file4.txt,1577880000.0,c,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file4.txt,1577880000.0,b,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file5.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file5.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file5.txt,1577880000.0,c,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file5.txt,1577880000.0,b,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/lost+found,1794439013.0,m,,0,0,Wed Nov 11 2026 23:16:53
+tsk_mactime_z,/lost+found,1794439013.0,a,,0,0,Wed Nov 11 2026 23:16:53
+tsk_mactime_z,/lost+found,1794439013.0,c,,0,0,Wed Nov 11 2026 23:16:53
+tsk_mactime_z,/lost+found,1794439013.0,b,,0,0,Wed Nov 11 2026 23:16:53
+tsk_mactime_z,/file1.txt,1794439013.0,b,,0,0,Wed Nov 11 2026 23:16:53
+tsk_mactime_z,/file2.txt,1794439015.0,b,,0,0,Wed Nov 11 2026 23:16:55
+tsk_mactime_z,/file3.txt,1794439017.0,b,,0,0,Wed Nov 11 2026 23:16:57
+tsk_mactime_z,/file1.txt,1794439026.0,c,,0,0,Wed Nov 11 2026 23:17:06
+tsk_mactime_z,/file2.txt,1794439026.0,c,,0,0,Wed Nov 11 2026 23:17:06
+tsk_mactime_z,/file3.txt,1794439026.0,c,,0,0,Wed Nov 11 2026 23:17:06

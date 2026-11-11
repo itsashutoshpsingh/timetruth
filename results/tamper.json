@@ -1,0 +1,27 @@
+{
+  "fat32_tamper": {
+    "actions_after_clock_change": 15,
+    "clock_set_back_hours": 48.0,
+    "outcomes_vs_system_clock": {
+      "correct": 39,
+      "not_recorded": 85,
+      "wrong_value": 26
+    },
+    "post_change_files_flagged": 5,
+    "post_change_files_seen": 5,
+    "pre_change_files_flagged": 1,
+    "pre_change_files_seen": 8
+  },
+  "ntfs_tamper": {
+    "actions_after_clock_change": 15,
+    "clock_set_back_hours": 48.0,
+    "outcomes_vs_system_clock": {
+      "correct": 156,
+      "not_recorded": 24
+    },
+    "post_change_files_flagged": 5,
+    "post_change_files_seen": 5,
+    "pre_change_files_flagged": 0,
+    "pre_change_files_seen": 9
+  }
+}

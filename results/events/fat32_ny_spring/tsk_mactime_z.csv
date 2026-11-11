@@ -1,0 +1,52 @@
+tool,path,epoch,kind,attr,deleted,label_ambiguous,raw
+tsk_mactime_z,/restored/budget.csv,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/restored/notes.txt,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/docs/report.txt,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/photos/_mg001.jpg,1772946000.0,a,,1,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/photos/holiday.jpg,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/docs/final_v2.txt,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/docs/run.sh,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/docs/notes_copy.tx,1772946000.0,a,,1,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/archive/notes_v2.txt,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/archive/_udget.zip,1772946000.0,a,,1,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/docs,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/archive/report_backup.txt,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/archive,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/restored,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/photos,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/done.txt,1772946000.0,a,,0,0,Sun Mar 08 2026 00:00:00
+tsk_mactime_z,/docs,1772953026.0,m,,0,0,Sun Mar 08 2026 01:57:06
+tsk_mactime_z,/docs,1772953026.0,b,,0,0,Sun Mar 08 2026 01:57:06
+tsk_mactime_z,/archive,1772953038.0,m,,0,0,Sun Mar 08 2026 01:57:18
+tsk_mactime_z,/archive,1772953038.0,b,,0,0,Sun Mar 08 2026 01:57:18
+tsk_mactime_z,/docs/notes_copy.tx,1772953086.0,m,,1,0,Sun Mar 08 2026 01:58:06
+tsk_mactime_z,/docs/notes_copy.tx,1772953086.0,b,,1,0,Sun Mar 08 2026 01:58:06
+tsk_mactime_z,/archive/notes_v2.txt,1772953086.0,m,,0,0,Sun Mar 08 2026 01:58:06
+tsk_mactime_z,/archive/notes_v2.txt,1772953086.0,b,,0,0,Sun Mar 08 2026 01:58:06
+tsk_mactime_z,/docs/report.txt,1772953122.0,m,,0,0,Sun Mar 08 2026 01:58:42
+tsk_mactime_z,/docs/report.txt,1772953122.0,b,,0,0,Sun Mar 08 2026 01:58:42
+tsk_mactime_z,/archive/_udget.zip,1772953146.0,m,,1,0,Sun Mar 08 2026 01:59:06
+tsk_mactime_z,/archive/_udget.zip,1772953146.0,b,,1,0,Sun Mar 08 2026 01:59:06
+tsk_mactime_z,/restored,1772953170.0,m,,0,0,Sun Mar 08 2026 01:59:30
+tsk_mactime_z,/restored,1772953170.0,b,,0,0,Sun Mar 08 2026 01:59:30
+tsk_mactime_z,/restored/budget.csv,1772953182.0,m,,0,0,Sun Mar 08 2026 01:59:42
+tsk_mactime_z,/restored/budget.csv,1772953182.0,b,,0,0,Sun Mar 08 2026 01:59:42
+tsk_mactime_z,/docs/run.sh,1772953194.0,m,,0,0,Sun Mar 08 2026 01:59:54
+tsk_mactime_z,/docs/run.sh,1772953194.0,b,,0,0,Sun Mar 08 2026 01:59:54
+tsk_mactime_z,/photos,1772953218.0,m,,0,0,Sun Mar 08 2026 03:00:18
+tsk_mactime_z,/photos,1772953218.0,b,,0,0,Sun Mar 08 2026 03:00:18
+tsk_mactime_z,/photos/_mg001.jpg,1772953230.0,m,,1,0,Sun Mar 08 2026 03:00:30
+tsk_mactime_z,/photos/_mg001.jpg,1772953230.0,b,,1,0,Sun Mar 08 2026 03:00:30
+tsk_mactime_z,/photos/holiday.jpg,1772953242.0,m,,0,0,Sun Mar 08 2026 03:00:42
+tsk_mactime_z,/photos/holiday.jpg,1772953242.0,b,,0,0,Sun Mar 08 2026 03:00:42
+tsk_mactime_z,/restored/notes.txt,1772953278.0,m,,0,0,Sun Mar 08 2026 03:01:18
+tsk_mactime_z,/restored/notes.txt,1772953278.0,b,,0,0,Sun Mar 08 2026 03:01:18
+tsk_mactime_z,/archive/report_backup.txt,1772953290.0,m,,0,0,Sun Mar 08 2026 03:01:30
+tsk_mactime_z,/archive/report_backup.txt,1772953290.0,b,,0,0,Sun Mar 08 2026 03:01:30
+tsk_mactime_z,/docs/final_v2.txt,1772953326.0,m,,0,0,Sun Mar 08 2026 03:02:06
+tsk_mactime_z,/docs/final_v2.txt,1772953326.0,b,,0,0,Sun Mar 08 2026 03:02:06
+tsk_mactime_z,/done.txt,1772953374.0,m,,0,0,Sun Mar 08 2026 03:02:54
+tsk_mactime_z,/done.txt,1772953374.0,b,,0,0,Sun Mar 08 2026 03:02:54
+tsk_mactime_z,/evidence    (volume label entry),1794373200.0,a,,0,0,Wed Nov 11 2026 00:00:00
+tsk_mactime_z,/evidence    (volume label entry),1794457760.0,m,,0,0,Wed Nov 11 2026 23:29:20
+tsk_mactime_z,/evidence    (volume label entry),1794457760.0,b,,0,0,Wed Nov 11 2026 23:29:20

@@ -1,0 +1,16 @@
+tool,path,epoch,kind,attr,deleted,label_ambiguous,raw
+tsk_fls_z,/file1.txt,1577880000,a,,0,0,1577880000
+tsk_fls_z,/file1.txt,1577880000,m,,0,0,1577880000
+tsk_fls_z,/file1.txt,1794439047,b,,0,0,1794439047
+tsk_fls_z,/file2.txt,1577880000,a,,0,0,1577880000
+tsk_fls_z,/file2.txt,1577880000,m,,0,0,1577880000
+tsk_fls_z,/file2.txt,1794439049,b,,0,0,1794439049
+tsk_fls_z,/file3.txt,1577880000,a,,0,0,1577880000
+tsk_fls_z,/file3.txt,1577880000,m,,0,0,1577880000
+tsk_fls_z,/file3.txt,1794439051,b,,0,0,1794439051
+tsk_fls_z,/file4.txt,1577880000,a,,0,0,1577880000
+tsk_fls_z,/file4.txt,1577880000,m,,0,0,1577880000
+tsk_fls_z,/file4.txt,1794439053,b,,0,0,1794439053
+tsk_fls_z,/file5.txt,1577880000,a,,0,0,1577880000
+tsk_fls_z,/file5.txt,1577880000,m,,0,0,1577880000
+tsk_fls_z,/file5.txt,1794439055,b,,0,0,1794439055

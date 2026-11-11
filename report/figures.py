@@ -87,25 +87,35 @@ def heatmap(m):
 
 
 def dst(m):
-    d = m[(m.scenario == "london_fall") & (m.delta_s.notna()) & (m.delta_s != "")].copy()
+    d = m[m.delta_s.notna() & (m.delta_s.astype(str) != "")].copy()
     d["delta_s"] = d.delta_s.astype(float)
     d["t"] = pd.to_datetime(d.truth_utc)
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.2), gridspec_kw={"width_ratios": [1.4, 1]})
-    styles = {"fat32": ("#ffb000", "o"), "exfat": ("#4ea8de", "s"), "ntfs": ("#00e5a0", "^"), "ext4": ("#c9d1d9", "x")}
-    for ax, tool, scale, unit in ((axes[0], "tsk_fls_z", 3600, "hours"), (axes[1], "plaso_z", 86400, "days")):
+    change = {"london_fall": pd.Timestamp("2026-10-25T01:00:00Z"), "ny_spring": pd.Timestamp("2026-03-08T07:00:00Z")}
+    styles = {"fat32": ("#ffb000", "o"), "exfat": ("#4ea8de", "s"), "ntfs": ("#00e5a0", "^")}
+    fig, axes = plt.subplots(1, 3, figsize=(15, 4.3), gridspec_kw={"width_ratios": [1, 1, 1]})
+    panels = [("london_fall", "TSK fls -z Europe/London\nclocks go back 02:00 BST -> 01:00 GMT"),
+              ("ny_spring", "TSK fls -z America/New_York\nclocks go forward 02:00 EST -> 03:00 EDT")]
+    for ax, (sc, title) in zip(axes[:2], panels):
         for fs, (c, mk) in styles.items():
-            g = d[(d.tool == tool) & (d.fs == fs)].sort_values("t")
-            if len(g):
-                ax.plot(g.t, g.delta_s / scale, marker=mk, ms=4, lw=1, color=c, label=fs)
-        ax.axvline(pd.Timestamp("2026-10-25T01:00:00Z"), color="#ff4d6d", ls="--", lw=1)
-        ax.text(pd.Timestamp("2026-10-25T01:00:10Z"), ax.get_ylim()[1] * 0.92 if ax.get_ylim()[1] > 0 else 0.5,
-                "clocks go back\n02:00 BST -> 01:00 GMT", color="#ff4d6d", fontsize=8, va="top")
-        ax.set_title(f"{TOOLS[tool].replace('<writer zone>', 'Europe/London')}", fontsize=9)
-        ax.set_ylabel(f"reported minus true ({unit})")
+            g = d[(d.tool == "tsk_fls_z") & (d.fs == fs) & (d.scenario == sc)].sort_values("t")
+            x = (g.t - change[sc]).dt.total_seconds() / 60
+            ax.plot(x, g.delta_s / 3600, marker=mk, ms=4, lw=0, color=c, label=fs)
+        ax.axvline(0, color="#ff4d6d", ls="--", lw=1)
+        ax.set_ylim(-1.5, 1.5)
+        ax.set_title(title, fontsize=9)
+        ax.set_xlabel("minutes from the clock change (true time)")
+        ax.set_ylabel("reported minus true (hours)")
         ax.grid(color=GRID, lw=0.5)
-        ax.xaxis.set_major_formatter(matplotlib.dates.DateFormatter("%H:%M"))
-        ax.set_xlabel("true time of action (UTC), 25 Oct 2026")
-        ax.legend(frameon=False, fontsize=8)
+        ax.legend(frameon=False, fontsize=8, loc="lower right")
+    ax = axes[2]
+    for fs, (c, mk) in (("fat32", styles["fat32"]), ("exfat", styles["exfat"])):
+        g = d[(d.tool == "plaso_z") & (d.fs == fs)]
+        ax.hist(g.delta_s / 86400, bins=np.arange(27.5, 32.6, 0.25), color=c, alpha=0.85, label=fs)
+    ax.set_title("Plaso 20261027 on FAT32/exFAT, all runs\nlibfsfat day-count error", fontsize=9)
+    ax.set_xlabel("reported minus true (days)")
+    ax.set_ylabel("tool-reported times")
+    ax.grid(color=GRID, lw=0.5)
+    ax.legend(frameon=False, fontsize=8)
     save(fig, "dst_offsets.png")
 
 

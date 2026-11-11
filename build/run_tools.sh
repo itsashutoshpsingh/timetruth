@@ -23,9 +23,9 @@ $PY "$HERE/parse/tsk_to_common.py" mactime "$RAW/mactime_z.csv" "$EV/tsk_mactime
 # Plaso: default, then --timezone set to the writer's zone.
 for cfg in plaso plaso_z; do
   extra=(); [ $cfg = plaso_z ] && extra=(--timezone "$ZONE")
-  $PLASO/log2timeline --quiet --status_view none --unattended "${extra[@]}" \
+  $PLASO/log2timeline --quiet --status_view none --unattended --logfile "$RAW/$cfg.l2t.log.gz" "${extra[@]}" \
       --storage_file "$RAW/$cfg.plaso" "$IMAGE" > "$RAW/$cfg.log" 2>&1
-  $PLASO/psort --status_view none -o json_line -w "$RAW/$cfg.jsonl" "$RAW/$cfg.plaso" >> "$RAW/$cfg.log" 2>&1
+  $PLASO/psort --status_view none --logfile "$RAW/$cfg.psort.log.gz" -o json_line -w "$RAW/$cfg.jsonl" "$RAW/$cfg.plaso" >> "$RAW/$cfg.log" 2>&1
   $PY "$HERE/parse/plaso_to_common.py" "$RAW/$cfg.jsonl" "$EV/$cfg.csv" --tool $cfg
 done
 

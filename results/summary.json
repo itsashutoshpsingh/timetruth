@@ -1,0 +1,102 @@
+{
+  "project": "timetruth",
+  "headline": "1828 tool-reported times checked (16 runs: 4 file systems x 4 time-zone scenarios x 30 actions, 6 tool configurations). 502 (27%) were not the true instant: 264 wrong value, 146 right clock reading in the wrong zone, 76 ambiguous, 16 missing.",
+  "metrics": [
+    {
+      "label": "tool-reported times checked",
+      "value": 1828
+    },
+    {
+      "label": "not the true instant",
+      "value": "27%"
+    },
+    {
+      "label": "wrong value",
+      "value": 264
+    },
+    {
+      "label": "wrong zone",
+      "value": 146
+    },
+    {
+      "label": "ambiguous",
+      "value": 76
+    },
+    {
+      "label": "missing",
+      "value": 16
+    },
+    {
+      "label": "correct on exfat",
+      "value": "30.5%"
+    },
+    {
+      "label": "correct on ext4",
+      "value": "100.0%"
+    },
+    {
+      "label": "correct on fat32",
+      "value": "35.0%"
+    },
+    {
+      "label": "correct on ntfs",
+      "value": "95.8%"
+    }
+  ],
+  "by_tool": {
+    "TSK fls 4.12.1 (default)": {
+      "correct": 239,
+      "wrong_zone": 92,
+      "ambiguous": 13,
+      "wrong_value": 0,
+      "missing": 0,
+      "not_recorded": 136
+    },
+    "TSK fls 4.12.1 -z <writer zone>": {
+      "correct": 299,
+      "wrong_zone": 32,
+      "ambiguous": 13,
+      "wrong_value": 0,
+      "missing": 0,
+      "not_recorded": 136
+    },
+    "TSK mactime 4.12.1 -z, -d display": {
+      "correct": 272,
+      "wrong_zone": 22,
+      "ambiguous": 50,
+      "wrong_value": 0,
+      "missing": 0,
+      "not_recorded": 136
+    },
+    "Plaso 20261027 (default)": {
+      "correct": 204,
+      "wrong_zone": 0,
+      "ambiguous": 0,
+      "wrong_value": 132,
+      "missing": 8,
+      "not_recorded": 136
+    },
+    "Plaso 20261027 --timezone <writer zone>": {
+      "correct": 204,
+      "wrong_zone": 0,
+      "ambiguous": 0,
+      "wrong_value": 132,
+      "missing": 8,
+      "not_recorded": 136
+    },
+    "analyzeMFT 3.1.1 (NTFS only)": {
+      "correct": 108,
+      "wrong_zone": 0,
+      "ambiguous": 0,
+      "wrong_value": 0,
+      "missing": 0,
+      "not_recorded": 12
+    }
+  },
+  "charts": [
+    "docs/img/hero_outcomes.png",
+    "docs/img/heatmap_correct.png",
+    "docs/img/dst_offsets.png",
+    "docs/img/pipeline.png"
+  ]
+}

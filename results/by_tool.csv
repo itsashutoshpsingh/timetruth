@@ -1,0 +1,7 @@
+tool,correct,wrong_zone,ambiguous,wrong_value,missing,not_recorded,scored,pct_correct
+tsk_fls,239,92,13,0,0,136,344,69.5
+tsk_fls_z,299,32,13,0,0,136,344,86.9
+tsk_mactime_z,272,22,50,0,0,136,344,79.1
+plaso,204,0,0,132,8,136,344,59.3
+plaso_z,204,0,0,132,8,136,344,59.3
+analyzemft,108,0,0,0,0,12,108,100.0

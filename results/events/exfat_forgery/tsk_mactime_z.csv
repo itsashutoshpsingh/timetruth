@@ -1,0 +1,16 @@
+tool,path,epoch,kind,attr,deleted,label_ambiguous,raw
+tsk_mactime_z,/file1.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file1.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file2.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file2.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file3.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file3.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file4.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file4.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file5.txt,1577880000.0,m,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file5.txt,1577880000.0,a,,0,0,Wed Jan 01 2020 12:00:00
+tsk_mactime_z,/file1.txt,1794439047.0,b,,0,0,Wed Nov 11 2026 23:17:27
+tsk_mactime_z,/file2.txt,1794439049.0,b,,0,0,Wed Nov 11 2026 23:17:29
+tsk_mactime_z,/file3.txt,1794439051.0,b,,0,0,Wed Nov 11 2026 23:17:31
+tsk_mactime_z,/file4.txt,1794439053.0,b,,0,0,Wed Nov 11 2026 23:17:33
+tsk_mactime_z,/file5.txt,1794439055.0,b,,0,0,Wed Nov 11 2026 23:17:35

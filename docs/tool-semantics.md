@@ -9,7 +9,7 @@ things. Read this before calling any difference an error.
 |---|---|---|---|---|
 | NTFS | `$SI`: created, modified, MFT changed, accessed. `$FN`: the same four, per name | UTC (FILETIME) | 100 ns | ntfs-3g updates `$FN` together with `$SI`, including when back-dating through `system.ntfs_times`. The Windows driver does not do this |
 | ext4 | atime, mtime, ctime, crtime | UTC (epoch) | 1 ns | default `relatime`; ctime cannot be set by `touch` |
-| exFAT | created, modified, accessed | **local time + UTC offset** (15-min units, valid bit) | 10 ms (c, m), 2 s (a) | fuse-exfat 1.4.0 writes a valid offset (0x84 in BST, 0x80 in GMT, 0x96 in IST) |
+| exFAT | created, modified, accessed | **local time + UTC offset** (15-min units, valid bit) | 10 ms (c, m), 2 s (a) | fuse-exfat 1.4.0 writes **one offset per mount**: 0x96 (+5:30) Kolkata; 0x84 (+1:00) for the whole London run, even after clocks went back; 0xF0 (-4:00) for the whole New York run, even before clocks went forward. Wall time and offset always agree on the true UTC instant, so the instant is recoverable even when the wall time is not the legal local time |
 | FAT32 | created, modified, accessed (date only) | **local time, no offset** | 10 ms (c), 2 s (m), 1 day (a) | mtools 4.0.43 uses `TZ` for local time. A rename or move changes no time on the file |
 
 ## What each tool reports

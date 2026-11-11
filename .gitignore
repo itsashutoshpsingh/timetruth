@@ -4,3 +4,4 @@ __pycache__/
 *.plaso
 logs/
 .pytest_cache/
+*.log.gz
