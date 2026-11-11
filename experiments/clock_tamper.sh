@@ -24,7 +24,9 @@ seg() {  # seg <offset> <ids>
     TZ=$ZONE FAKETIME=$off NO_FAKE_STAT=1 LD_PRELOAD=$LIB $ACT --backend mtools --target "$IMG" --ids "$2"
   fi
 }
-case $FS in ntfs) mkntfs -q -F -f -L EVIDENCE "$IMG" >/dev/null 2>&1 ;; fat32) mkfs.vfat -F 32 -n EVIDENCE "$IMG" >/dev/null ;; esac
+# Format on the same (correct) clock as the first segment, as the owner's machine would.
+F1=$(printf '%+ds' "$O1"); FK="env TZ=$ZONE FAKETIME=$F1 NO_FAKE_STAT=1 LD_PRELOAD=$LIB"
+case $FS in ntfs) $FK mkntfs -q -F -f -L EVIDENCE "$IMG" >/dev/null 2>&1 ;; fat32) $FK mkfs.vfat -F 32 -n EVIDENCE "$IMG" >/dev/null ;; esac
 seg "$O1" 1-15
 seg "$O2" 16-30
 sha256sum "$IMG" | awk '{print $1}' > "$OUT/image.sha256"

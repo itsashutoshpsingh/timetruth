@@ -94,3 +94,17 @@ def test_cli_smoke(tmp_path):
     subprocess.run([sys.executable, os.path.join(ROOT, "compare", "diff.py"), "--truth", FX,
                     "--events", os.path.join(FX, "events_demo"), "--out", str(out)], check=True)
     assert out.read_text().count("\n") == 1 + 6 * 2
+
+
+def test_clock_anomaly_flags_backwards_jump(tmp_path):
+    import clock_anomaly
+    body = tmp_path / "b.body"
+    body.write_text("\n".join([
+        "0|/a|10-128-2|r|0|0|1|0|0|0|1000000",
+        "0|/b|11-128-2|r|0|0|1|0|0|0|1000100",
+        "0|/b ($FILE_NAME)|11-48-3|r|0|0|1|0|0|0|1",   # $FN lines ignored
+        "0|/c|12-128-2|r|0|0|1|0|0|0|827300",          # 2 days earlier: clock set back
+        "0|/d|13-128-2|r|0|0|1|0|0|0|998000",          # earlier by < 1 h: not flagged
+    ]) + "\n")
+    flags = {p: f for p, _, _, f in clock_anomaly.flag(clock_anomaly.load(str(body)))}
+    assert flags == {"/a": False, "/b": False, "/c": True, "/d": False}
