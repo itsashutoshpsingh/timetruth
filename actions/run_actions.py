@@ -209,15 +209,20 @@ def main():
     ap.add_argument("--target", required=True, help="mount point (posix) or image (mtools)")
     ap.add_argument("--out", required=True, help="directory for truth.csv / final_state.csv")
     ap.add_argument("--spacing", type=float, default=12.0)
+    ap.add_argument("--ids", default="1-30", help="run only these actions, e.g. 16-30 (truth.csv is appended)")
     args = ap.parse_args()
+    lo, hi = (int(x) for x in args.ids.split("-"))
 
     backend = Posix(args.target) if args.backend == "posix" else Mtools(args.target)
     off = fake_offset()
     os.makedirs(args.out, exist_ok=True)
-    with open(os.path.join(args.out, "truth.csv"), "w", newline="") as f:
+    truth = os.path.join(args.out, "truth.csv")
+    fresh = lo == 1
+    with open(truth, "w" if fresh else "a", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["action_id", "utc_time", "host_utc_time", "type", "path", "check_path", "source"])
-        for i, (aid, kind, path, src) in enumerate(ACTIONS):
+        if fresh:
+            w.writerow(["action_id", "utc_time", "host_utc_time", "type", "path", "check_path", "source"])
+        for i, (aid, kind, path, src) in enumerate(a for a in ACTIONS if lo <= a[0] <= hi):
             if i:
                 time.sleep(args.spacing)
             t = time.time()
