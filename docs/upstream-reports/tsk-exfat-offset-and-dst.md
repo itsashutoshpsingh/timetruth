@@ -1,8 +1,8 @@
-# Draft upstream report: TSK ignores exFAT UTC offsets and resolves DST-ambiguous FAT times inconsistently
+# Upstream report: exFAT UTC offset fields are ignored, and DST-ambiguous FAT times resolve to different instants within one entry
 
-**Status: draft, not filed.** Target: https://github.com/sleuthkit/sleuthkit/issues
-Search the tracker for existing reports first (search terms: "exfat utc offset",
-"fat timezone dst", "mktime isdst").
+**Status: ready to file, not yet filed.** Open a new issue at https://github.com/sleuthkit/sleuthkit/issues/new with the title above and everything below the line as the body. No existing report was found when searching the tracker on 2026-11-12.
+
+---
 
 ## Versions
 
@@ -14,11 +14,11 @@ Search the tracker for existing reports first (search terms: "exfat utc offset",
 exFAT file directory entries store, next to each local timestamp, a UTC offset in
 15-minute units with a valid bit (exFAT spec 7.4.10-7.4.12). `tsk_exfatfs.h`
 declares `created_time_time_zone_offset`, `modified_time_time_zone_offset` and
-`accessed_time_time_zone_offset`, but `exfatfs_meta.c` converts all three times with
+`accessed_time_time_zone_offset`, but `exfatfs_meta.cpp` converts all three times with
 `fatfs_dos_2_unix_time()` and never reads the offsets. The stored local time is then
 interpreted in the examiner's `-z` zone (or `TZ`).
 
-Reproduce (this repository, run `exfat_kolkata`): a volume written by fuse-exfat 1.4.0
+Reproduce (timetruth run `exfat_kolkata`): a volume written by fuse-exfat 1.4.0
 with `TZ=Asia/Kolkata` stores 15:30:07 local with offset byte 0x96 (valid, +5:30).
 `fls -r -m /` on a UTC workstation reports 15:30:07 UTC, 5.5 h late; `fls -z
 Asia/Kolkata` is right only because the examiner happened to know the writer's zone.
@@ -60,3 +60,5 @@ Python's `fold=0` does), and document it in `fls(1)`'s `-z` description.
 original system already wrote its offset to disk, and on NTFS/ext4 `-z` has no effect.
 Saying which file systems `-z` applies to would stop examiners relying on it for the
 wrong ones.
+
+Found with [timetruth](https://github.com/itsashutoshpsingh/timetruth), a ground-truth test harness for forensic timeline tools. Happy to split this into two issues if you prefer.

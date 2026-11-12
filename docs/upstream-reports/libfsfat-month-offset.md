@@ -1,6 +1,8 @@
-# Draft upstream report: libfsfat FAT/exFAT timestamps are 28-31 days late
+# Upstream report: FAT/exFAT timestamps are 28 to 31 days late: off-by-one errors in libfsfat_date_time_get_timestamp()
 
-**Status: draft, not filed.** Target: https://github.com/libyal/libfsfat/issues
+**Status: ready to file, not yet filed.** Open a new issue at https://github.com/libyal/libfsfat/issues/new with the title above and everything below the line as the body. No existing report was found when searching the tracker on 2026-11-12.
+
+---
 
 ## Summary
 
@@ -26,8 +28,7 @@ python3 -c "import pyfsfat; v=pyfsfat.volume(); v.open('d.img'); print(v.get_fil
 # 2025-03-28 12:00:00   (on-disk entry, TSK fls and mtools mdir all say 2025-02-28)
 ```
 
-Decoded raw directory entries next to libfsfat output (5 dates, this repository's
-`docs/what-went-wrong.md`):
+Decoded raw directory entries next to libfsfat output (5 dates):
 
 | On disk (decoded by hand) | libfsfat 20260826 |
 |---|---|
@@ -73,3 +74,5 @@ Any timeline of a FAT or exFAT volume (USB sticks, SD cards, camera media) built
 with Plaso 20261027 places every file-system event about a month late. TSK and the
 operating system show the correct date, so the error is easy to miss unless two tools
 are compared.
+
+Found with [timetruth](https://github.com/itsashutoshpsingh/timetruth), a ground-truth test harness for forensic timeline tools; the full runs and classification are in that repository.
